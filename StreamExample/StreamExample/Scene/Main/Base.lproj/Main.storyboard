@@ -1,24 +1,111 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Stream View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="StreamViewController" customModule="StreamExample" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Iid-pc-0Fj">
+                                <rect key="frame" x="82" y="74" width="250" height="36"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="K3o-YI-H9t"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                <state key="normal" title="Download Start">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="tapDownloadStartButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PNX-7d-BTd"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="mK9-Qc-3ms">
+                                <rect key="frame" x="10" y="146" width="394" height="100"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7Z3-BX-Qun">
+                                        <rect key="frame" x="0.0" y="0.0" width="193" height="100"/>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fml-L2-cwQ">
+                                        <rect key="frame" x="201" y="0.0" width="193" height="100"/>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="5Ia-3g-O7C"/>
+                                </constraints>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="gak-55-kYd">
+                                <rect key="frame" x="10" y="282" width="394" height="100"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="D6C-t5-Eav">
+                                        <rect key="frame" x="0.0" y="0.0" width="193" height="100"/>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zRS-mJ-jOL">
+                                        <rect key="frame" x="201" y="0.0" width="193" height="100"/>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="Den-2Y-1eN"/>
+                                </constraints>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="스트림 파일 저장 다운로드" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PW3-7J-cN3">
+                                <rect key="frame" x="39.5" y="130" width="134.5" height="16"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Data Append 다운로드" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fkg-ej-KAB">
+                                <rect key="frame" x="243.5" y="130" width="128" height="16"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="스트림 메모리 다운로드" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KEU-Nc-qRk">
+                                <rect key="frame" x="46.5" y="266" width="120" height="16"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="gak-55-kYd" firstAttribute="trailing" secondItem="mK9-Qc-3ms" secondAttribute="trailing" id="3zh-rk-a6Q"/>
+                            <constraint firstItem="PW3-7J-cN3" firstAttribute="centerX" secondItem="7Z3-BX-Qun" secondAttribute="centerX" id="8Bf-PO-8sB"/>
+                            <constraint firstItem="fkg-ej-KAB" firstAttribute="centerX" secondItem="fml-L2-cwQ" secondAttribute="centerX" id="8zH-23-ykd"/>
+                            <constraint firstItem="mK9-Qc-3ms" firstAttribute="top" secondItem="PW3-7J-cN3" secondAttribute="bottom" id="Dg1-BT-GdX"/>
+                            <constraint firstItem="Iid-pc-0Fj" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Fz9-7g-0lC"/>
+                            <constraint firstItem="KEU-Nc-qRk" firstAttribute="centerX" secondItem="D6C-t5-Eav" secondAttribute="centerX" id="NHH-FQ-mTF"/>
+                            <constraint firstItem="KEU-Nc-qRk" firstAttribute="top" secondItem="mK9-Qc-3ms" secondAttribute="bottom" constant="20" id="SJK-iF-KTv"/>
+                            <constraint firstItem="PW3-7J-cN3" firstAttribute="top" secondItem="Iid-pc-0Fj" secondAttribute="bottom" constant="20" id="Uss-h0-Gj5"/>
+                            <constraint firstItem="mK9-Qc-3ms" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="bBf-Gy-AtZ"/>
+                            <constraint firstItem="Iid-pc-0Fj" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="jH7-fv-fSE"/>
+                            <constraint firstItem="mK9-Qc-3ms" firstAttribute="top" secondItem="fkg-ej-KAB" secondAttribute="bottom" id="oTY-SB-RII"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="mK9-Qc-3ms" secondAttribute="trailing" constant="10" id="vc7-yt-dOx"/>
+                            <constraint firstItem="gak-55-kYd" firstAttribute="top" secondItem="KEU-Nc-qRk" secondAttribute="bottom" id="wQ2-bh-OsZ"/>
+                            <constraint firstItem="gak-55-kYd" firstAttribute="leading" secondItem="mK9-Qc-3ms" secondAttribute="leading" id="wab-k2-ryY"/>
+                            <constraint firstItem="mK9-Qc-3ms" firstAttribute="centerX" secondItem="Iid-pc-0Fj" secondAttribute="centerX" id="xY1-yE-KYo"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="appendBufferImageView" destination="fml-L2-cwQ" id="RYq-Ca-vws"/>
+                        <outlet property="downloadButton" destination="Iid-pc-0Fj" id="UMJ-1J-OoX"/>
+                        <outlet property="streamFileImageView" destination="7Z3-BX-Qun" id="U0g-GX-Jq1"/>
+                        <outlet property="streamMemoryImageView" destination="D6C-t5-Eav" id="8zD-5x-AzN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="135.9375"/>
         </scene>
     </scenes>
 </document>
